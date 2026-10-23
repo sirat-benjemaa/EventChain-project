@@ -1,0 +1,362 @@
+[
+  {
+    "type": "function",
+    "name": "cancelEvent",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createEvent",
+    "inputs": [
+      {
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "name": "_location",
+        "type": "string"
+      },
+      {
+        "name": "_date",
+        "type": "uint256"
+      },
+      {
+        "name": "_ticketPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "_ticketCapacity",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "constructor",
+    "inputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "EventCancelled",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256",
+        "indexed": true
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "EventCreated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "organizer",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "indexed": false
+      },
+      {
+        "name": "date",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "EventUpdated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256",
+        "indexed": true
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "recordTicketRefund",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      },
+      {
+        "name": "quantity",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "recordTicketSale",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      },
+      {
+        "name": "quantity",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setTicketContract",
+    "inputs": [
+      {
+        "name": "_ticketContract",
+        "type": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "TicketContractUpdated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "newTicketContract",
+        "type": "address",
+        "indexed": true
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TicketSaleRecorded",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "quantity",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TicketSaleReversed",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "quantity",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "updateEvent",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      },
+      {
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "name": "_location",
+        "type": "string"
+      },
+      {
+        "name": "_date",
+        "type": "uint256"
+      },
+      {
+        "name": "_ticketPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "_ticketCapacity",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "eventCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAllEventIds",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getEvent",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "type": "uint256"
+          },
+          {
+            "name": "ticketPrice",
+            "type": "uint256"
+          },
+          {
+            "name": "ticketCapacity",
+            "type": "uint256"
+          },
+          {
+            "name": "ticketsSold",
+            "type": "uint256"
+          },
+          {
+            "name": "organizer",
+            "type": "address"
+          },
+          {
+            "name": "cancelled",
+            "type": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getTicketsAvailable",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isEventAvailable",
+    "inputs": [
+      {
+        "name": "eventId",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "ticketContract",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]
